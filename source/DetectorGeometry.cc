@@ -99,7 +99,7 @@ G4VPhysicalVolume *DetectorGeometry::Construct()
     logicPMT2i = new G4LogicalVolume(PMT2i, fGlass, "logicPMT2i");
 
     
-    for(G4int i=1; i<7; i++)
+    for(G4int i=0; i<7; i++)
     {
        if(i==0)
        {
@@ -109,7 +109,7 @@ G4VPhysicalVolume *DetectorGeometry::Construct()
          G4VPhysicalVolume *physicalPMT = new G4PVPlacement(0,G4ThreeVector(POS_bot_x[i]*mm,POS_bot_y[i]*mm,POS_bot_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true);
        }else
        {
-          G4VPhysicalVolume *physicalPMT = new G4PVPlacement(PMTRotation,G4ThreeVector(POS_side_x*mm,pow(-1,i)*POS_side_y*mm,POS_side_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true);
+          G4VPhysicalVolume *physicalPMT = new G4PVPlacement(PMTRotation,G4ThreeVector(POS_side_x*mm,std::pow(-1,i)*POS_side_y*mm,POS_side_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true);
        }
     }
 

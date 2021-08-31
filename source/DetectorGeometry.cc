@@ -81,7 +81,7 @@ G4VPhysicalVolume *DetectorGeometry::Construct()
     G4double d_PMT1i = 33.;
     G4double d_PMT2i = 52.;
     G4double PMT_thickness = 3.;
-    G4double POS_side_x = radiusAcryl/2*mm + 5.;
+    G4double POS_side_x = radiusAcryl + 5.;
     G4double POS_side_y = 0.;
     G4double POS_side_z = position;
     G4double POS_bot_x[5] = {0., 0., 0., -67.642, 67.642};

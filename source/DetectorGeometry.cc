@@ -52,10 +52,10 @@ G4VPhysicalVolume *DetectorGeometry::Construct()
 
     /*************************Liquid scintillator vessel*********************************/
     G4RotationMatrix* sphereRotation = new G4RotationMatrix();
-    sphereRotation->rotateX(90.*deg);
+    sphereRotation->rotateX(0.*deg);
     sphereRotation->rotateY(0.*deg);
     sphereRotation->rotateZ(0.*rad);
-    G4double position = -30.;
+    G4double position = -length/2+50;
     G4double shift = 0.;
 
     G4double radiusLiquid = 65/2;

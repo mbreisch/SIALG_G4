@@ -107,9 +107,15 @@ G4VPhysicalVolume *DetectorGeometry::Construct()
        }else if(i<5 && i!=0)
        {
          G4VPhysicalVolume *physicalPMT = new G4PVPlacement(0,G4ThreeVector(POS_bot_x[i]*mm,POS_bot_y[i]*mm,POS_bot_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true);
+       }else if(i==5)
+       {
+          G4VPhysicalVolume *physicalPMT = new G4PVPlacement(PMTRotation,G4ThreeVector(POS_side_x*mm,POS_side_y*mm,POS_side_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true);
+       }else if(i==6)
+       {
+          G4VPhysicalVolume *physicalPMT = new G4PVPlacement(PMTRotation,G4ThreeVector(-POS_side_x*mm,POS_side_y*mm,POS_side_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true);
        }else
        {
-          G4VPhysicalVolume *physicalPMT = new G4PVPlacement(PMTRotation,G4ThreeVector(POS_side_x*mm,std::pow(-1,i)*POS_side_y*mm,POS_side_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true);
+         G4cout << "NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO" << G4endl;
        }
     }
 

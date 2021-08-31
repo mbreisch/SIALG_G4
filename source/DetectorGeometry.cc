@@ -99,12 +99,17 @@ G4VPhysicalVolume *DetectorGeometry::Construct()
     logicPMT2i = new G4LogicalVolume(PMT2i, fGlass, "logicPMT2i");
 
     //G4VPhysicalVolume *physicalPMT = new G4PVPlacement(0,G4ThreeVector(POS_bot_x[0]*mm,POS_bot_y[0]*mm,POS_bot_z*mm), logicPMT2i,"physicalPMT",logicAir,false,0,true);
-    for(G4int i=1; i<5; i++)
+    for(G4int i=1; i<7; i++)
     {
-       G4VPhysicalVolume *physicalPMT = new G4PVPlacement(0,G4ThreeVector(POS_bot_x[i]*mm,POS_bot_y[i]*mm,POS_bot_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true); 
+       if(i<5)
+       {
+         G4VPhysicalVolume *physicalPMT = new G4PVPlacement(0,G4ThreeVector(POS_bot_x[i]*mm,POS_bot_y[i]*mm,POS_bot_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true);
+       }else
+       {
+          G4VPhysicalVolume *physicalPMT = new G4PVPlacement(PMTRotation,G4ThreeVector(POS_side_x*mm,pow(-1,i)*POS_side_y*mm,POS_side_z*mm), logicPMT1i,"physicalPMT",logicAir,false,i,true);
+       }
     }
-    G4VPhysicalVolume *physicalPMT = new G4PVPlacement(PMTRotation,G4ThreeVector(POS_side_x*mm,POS_side_y*mm,POS_side_z*mm), logicPMT1i,"physicalPMT",logicAir,false,5,true);
-    G4VPhysicalVolume *physicalPMT = new G4PVPlacement(PMTRotation,G4ThreeVector(POS_side_x*mm,-POS_side_y*mm,POS_side_z*mm), logicPMT1i,"physicalPMT",logicAir,false,6,true);
+
 
     /*************************Optical surfaces*********************************/
     /*************************Liquid scintillator*********************************/

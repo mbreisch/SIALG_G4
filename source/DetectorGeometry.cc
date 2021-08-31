@@ -55,7 +55,7 @@ G4VPhysicalVolume *DetectorGeometry::Construct()
     sphereRotation->rotateX(0.*deg);
     sphereRotation->rotateY(0.*deg);
     sphereRotation->rotateZ(0.*rad);
-    G4double position = -length/2+70;
+    G4double position = -length/2+100;
     G4double shift = 0.;
 
     G4double radiusLiquid = 65/2;

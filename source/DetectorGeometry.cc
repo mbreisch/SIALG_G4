@@ -86,7 +86,7 @@ G4VPhysicalVolume *DetectorGeometry::Construct()
     G4double POS_side_z = position;
     G4double POS_bot_x[5] = {0., 0., 0., -67.642, 67.642};
     G4double POS_bot_y[5] = {0., -67.642, 67.642, 0., 0.}; 
-    G4double POS_bot_z = (length/2-2*wallThickness);
+    G4double POS_bot_z = -(length/2-2*wallThickness);
     G4RotationMatrix* PMTRotation = new G4RotationMatrix();
     PMTRotation->rotateX(0.*deg);
     PMTRotation->rotateY(90.*deg);

@@ -25,8 +25,8 @@ void DetectorGeometry::DefineMaterials()
     Load_Material_PMMA();
     Load_Material_Aluminium();
     Load_Material_FusedSilica();
-    //Load_Material_SlowLS(17.68,68.88,310.12);
-    Load_Material_WbLS(2.56,17.56);
+    Load_Material_SlowLS(17.68,68.88,310.12);
+    //Load_Material_WbLS(2.56,17.56);
 }
 
 G4VPhysicalVolume *DetectorGeometry::Construct()

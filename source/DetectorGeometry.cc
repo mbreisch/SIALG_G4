@@ -414,7 +414,7 @@ void DetectorGeometry::Load_Material_WbLS(G4double Tau1, G4double Tau2)
     MatTab_LS->AddProperty("SCINTILLATIONCOMPONENT2", ENERGY_LS, SCINT_LS, NENTRIES_LS);
     MatTab_LS->AddProperty("RINDEX", ENERGY_LS, RINDEX_LS, NENTRIES_LS);
     MatTab_LS->AddProperty("ABSLENGTH", ENERGY_LS, ABSLEN_LS, NENTRIES_LS);
-    MatTab_LS->AddConstProperty("SCINTILLATIONYIELD", 0.0001 / MeV);
+    MatTab_LS->AddConstProperty("SCINTILLATIONYIELD", 750 / MeV);
     MatTab_LS->AddConstProperty("RESOLUTIONSCALE", 1.0);
     MatTab_LS->AddConstProperty("SCINTILLATIONTIMECONSTANT1", Tau1* ns);  //17 --- 2
     MatTab_LS->AddConstProperty("SCINTILLATIONTIMECONSTANT2", Tau2* ns); //68 --- 25
